@@ -1,0 +1,56 @@
+:root {
+  --bg-color: #0F0F0F;
+  --text-color: #FFFFFF;
+  --accent-red: #FF3008;
+  --accent-yellow: #EBFF00;
+  --accent-purple: #B026FF;
+  --accent-green: #00FF94;
+  --border-color: #FFFFFF;
+  --card-bg: #1A1A1A;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(var(--accent-red) 1px, transparent 1px),
+    radial-gradient(var(--border-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Dela Gothic One', cursive;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-red);
+  border: 2px solid var(--bg-color);
+}

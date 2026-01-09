@@ -1,0 +1,267 @@
+.data-explorer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  padding: 5px 0;
+  justify-content: flex-start;
+}
+
+.explorer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 10px;
+}
+
+.explorer-header .slide-title {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.explorer-stats {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 4px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  white-space: nowrap;
+}
+
+.explorer-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.search-box {
+  width: 100%;
+}
+
+.explorer-input,
+.explorer-select {
+  width: 100%;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--border-color);
+  color: white;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+}
+
+.explorer-input:focus,
+.explorer-select:focus {
+  outline: none;
+  border-color: var(--accent-yellow);
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
+}
+
+.explorer-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.filter-row {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-row .explorer-select {
+  flex: 1;
+}
+
+.explorer-table-container {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 2px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.explorer-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+}
+
+.explorer-table thead {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+
+.explorer-table th {
+  padding: 8px 6px;
+  text-align: left;
+  border-bottom: 2px solid var(--border-color);
+  color: var(--accent-yellow);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+}
+
+.explorer-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s;
+}
+
+.explorer-table th.sortable:hover {
+  background: rgba(255, 255, 0, 0.1);
+  color: var(--accent-yellow);
+}
+
+.explorer-table td {
+  padding: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.explorer-row {
+  transition: background 0.2s;
+}
+
+.explorer-row:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.explorer-table .date-cell {
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.55rem;
+}
+
+.explorer-table .store-cell {
+  font-weight: bold;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.explorer-table .item-cell {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.explorer-table .category-cell {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.55rem;
+}
+
+.explorer-table .quantity-cell {
+  text-align: center;
+  color: var(--accent-yellow);
+}
+
+.explorer-table .price-cell {
+  text-align: right;
+  font-weight: bold;
+  color: var(--accent-green, #00ff88);
+}
+
+.explorer-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding: 8px 0;
+}
+
+.pagination-btn {
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--border-color);
+  color: white;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: var(--accent-yellow);
+  color: black;
+  border-color: var(--accent-yellow);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.explorer-footer {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  padding-top: 8px;
+}
+
+.export-btn {
+  padding: 8px 16px;
+  background: var(--accent-green, #00ff88);
+  border: 2px solid black;
+  color: black;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+.export-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Scrollbar styling */
+.explorer-table-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.explorer-table-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.explorer-table-container::-webkit-scrollbar-thumb {
+  background: var(--accent-yellow);
+  border: 1px solid black;
+}
+
+.explorer-table-container::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-red);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .explorer-table {
+    font-size: 0.6rem;
+  }
+  
+  .explorer-table th,
+  .explorer-table td {
+    padding: 6px 4px;
+  }
+  
+  .explorer-table .date-cell {
+    font-size: 0.55rem;
+  }
+}
